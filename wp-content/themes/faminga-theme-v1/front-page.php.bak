@@ -1,0 +1,167 @@
+<?php
+declare(strict_types=1);
+/**
+ * The template for displaying the front page.
+ *
+ * @package Faminga_Theme_v1
+ */
+
+get_header(); 
+
+// Define translations for English and Kinyarwanda
+$translations = [
+    'en_US' => [
+        'hero_title' => 'Tailormade to <span class="text-primary">Manage</span> all Your Farm Data',
+        'hero_description' => 'Faminga empowers farmers with breakthrough technology for unparalleled productivity, sustainability, and profitability in smart agriculture across Africa.',
+        'get_started' => 'Get Started',
+        'learn_more' => 'Learn More',
+        'smart_farming' => 'Smart Farming',
+        'iot_monitoring' => 'IoT Monitoring',
+        'weather_services' => 'Weather Services',
+        'real_time_data' => 'Real-time Data',
+        'manage_all_layers' => 'We help you manage from top to bottom, all the farm layers',
+        'comprehensive_tools' => 'Faminga provides comprehensive farm management tools that connect all aspects of your agricultural operations, from soil monitoring to market access.',
+        'farm_management' => 'Farm Management',
+        'farm_management_desc' => 'Track planting and harvesting data, optimize farm operations, and manage inputs like water, fertilizers, seeds, and equipment.',
+        'iot_monitoring_title' => 'IoT Monitoring',
+        'iot_monitoring_desc' => 'Real-time monitoring of soil moisture, temperature, humidity, pH levels, and smart irrigation management with our Smart Hose system.',
+        'disease_detection' => 'Plant Disease Detection',
+        'disease_detection_desc' => 'AI-powered disease detection using image recognition, covering 33 main crops and 176 crop diseases for early prevention.',
+        'weather_title' => 'Weather & Geospatial',
+        'weather_desc' => 'Real-time weather forecasts, geospatial data integration with satellite imagery, and AI-powered yield and weather prediction.',
+        'marketplace' => 'Virtual Marketplace',
+        'marketplace_desc' => 'Global market access for farmers with fair pricing mechanisms and connection to export partners.',
+        'ai_advice' => 'AI Agricultural Advice',
+        'ai_advice_desc' => 'Huguka chatbot for agricultural advice in Kinyarwanda and multi-language support for all farming needs.',
+    ],
+    'rw_RW' => [
+        'hero_title' => 'Byakozwe ku buryo <span class="text-primary">Bucunga</span> Amakuru Yose y\'Ubuhinzi Bwawe',
+        'hero_description' => 'Faminga igufasha guhinga neza ukoresheje ikoranabuhanga rigezweho, rikuzamurira umusaruro, ubukungu, n\'uburambye mu buhinzi bugezweho muri Afurika.',
+        'get_started' => 'Tangira Ubu',
+        'learn_more' => 'Menya Byinshi',
+        'smart_farming' => 'Ubuhinzi bugezweho',
+        'iot_monitoring' => 'Kugenzura hifashishijwe IoT',
+        'weather_services' => 'Serivisi z\'iteganyagihe',
+        'real_time_data' => 'Amakuru ahinduka buri kanya',
+        'manage_all_layers' => 'Dufasha gucunga neza ibisobanuro byose by\'ubuhinzi bwawe kuva hejuru kugera hasi',
+        'comprehensive_tools' => 'Faminga itanga ibikoresho byuzuye byo gucunga ubuhinzi, bikahuza buri gice cyose cy\'ibikorwa byawe, kuva kugenzura ubutaka kugeza kugera ku isoko.',
+        'farm_management' => 'Gucunga Ubuhinzi',
+        'farm_management_desc' => 'Kurikirana igihe ubiba n\'igihe usarura, kunoza imikorere, no gucunga ibikoresho nko kuvomerera, ifumbire, imbuto n\'imashini.',
+        'iot_monitoring_title' => 'Kugenzura hifashishijwe IoT',
+        'iot_monitoring_desc' => 'Kugenzura ubutaka uko bwifashe (ubushuhe, ubushyuhe, ubuhehere, pH) no gucunga kuvomerera ukoresheje Smart Hose.',
+        'disease_detection' => 'Gutahura Indwara z\'Imyembe',
+        'disease_detection_desc' => 'Gusesengura indwara hakoreshejwe AI n\'amafoto, bikubiyemo imyaka 33 n\'indwara 176 zitandukanye, bigafasha kwirinda hakiri kare.',
+        'weather_title' => 'Iteganyagihe n\'Amakuru y\'Aho Uherereye',
+        'weather_desc' => 'Iteganyagihe rihinduka buri kanya, guhuza amakuru y\'ikirere n\'amafoto ya satellite, no guhanura umusaruro hakoreshejwe AI.',
+        'marketplace' => 'Isoko Ryo Ku Isi Hose',
+        'marketplace_desc' => 'Kugera ku masoko mpuzamahanga, kubona igiciro cyiza no guhuza n\'abafatanyabikorwa bohereza hanze.',
+        'ai_advice' => 'Inama za AI mu Buhinzi',
+        'ai_advice_desc' => 'Chatbot Huguka itanga inama mu buhinzi mu Kinyarwanda n\'izindi ndimi zose.',
+    ]
+];
+
+// Get current locale or default to English
+$current_locale = get_locale();
+if (!isset($translations[$current_locale])) {
+    $current_locale = 'en_US'; // Default to English
+}
+
+$t = $translations[$current_locale];
+?>
+
+	<!-- Transparency styles for parallax effect -->
+	<style>
+		section {
+			background-color: rgba(10, 42, 15, 0.75) !important;
+			backdrop-filter: blur(5px);
+			position: relative;
+			z-index: 1;
+		}
+		
+		.feature-card {
+			background: rgba(0, 51, 0, 0.3) !important;
+			backdrop-filter: blur(8px);
+			border: 1px solid rgba(82, 103, 0, 0.3);
+			box-shadow: 0 0 20px rgba(82, 103, 0, 0.1);
+		}
+		
+		.feature-card:hover {
+			background: rgba(0, 51, 0, 0.5) !important;
+			border-color: rgba(82, 103, 0, 0.5);
+			box-shadow: 0 0 30px rgba(82, 103, 0, 0.2);
+		}
+		
+		.solution-card {
+			background: rgba(0, 51, 0, 0.3) !important;
+			backdrop-filter: blur(8px);
+			border: 1px solid rgba(82, 103, 0, 0.3);
+			box-shadow: 0 0 20px rgba(82, 103, 0, 0.1);
+		}
+		
+		.solution-card:hover {
+			background: rgba(0, 51, 0, 0.5) !important;
+			border-color: rgba(82, 103, 0, 0.5);
+			box-shadow: 0 0 30px rgba(82, 103, 0, 0.2);
+		}
+		
+		.hero-section {
+			background: linear-gradient(90deg, rgba(0, 26, 0, 0.6) 0%, rgba(0, 26, 0, 0.4) 50%, rgba(0, 26, 0, 0.2) 100%) !important;
+		}
+		
+		.hero-section::before {
+			opacity: 0.5 !important;
+		}
+		
+		.dashboard-preview {
+			background-color: rgba(0, 0, 0, 0.4) !important;
+			backdrop-filter: blur(8px);
+		}
+	</style>
+
+	<!-- Parallax Background Image -->
+	<div id="parallax-bg" class="fixed inset-0 w-full h-full bg-cover bg-center opacity-0 transition-opacity duration-1000 -z-10" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg.png'); transform: translateZ(-1px) scale(2);"></div>
+
+	<main id="main" class="site-main relative">
+
+		<!-- Include homepage sections with translations passed as variables -->
+		<?php include get_template_directory() . '/templates/sections/homepage.php'; ?>
+
+		<!-- Back to Top Button -->
+		<button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/80 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible z-50" aria-label="Back to top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+
+	</main><!-- #main -->
+
+<?php
+get_footer(); ?>
+
+<script>
+	// Parallax Background Effect
+	document.addEventListener('DOMContentLoaded', function() {
+		const parallaxBg = document.getElementById('parallax-bg');
+		
+		// Fade in the background initially
+		setTimeout(function() {
+			parallaxBg.style.opacity = '0.8'; // 80% visibility
+		}, 300);
+		
+		// Parallax effect on scroll
+		window.addEventListener('scroll', function() {
+			const scrollY = window.scrollY;
+			const parallaxSpeed = 0.5;
+			
+			// Move the background at a different rate than the scroll
+			parallaxBg.style.transform = `translateZ(-1px) scale(2) translateY(${scrollY * parallaxSpeed}px)`;
+			
+			// Optional: Add more animation based on scroll position
+			if (scrollY > 100) {
+				// Add additional animation classes or change opacity
+				parallaxBg.style.opacity = Math.max(0.6 - (scrollY * 0.0005), 0.2); // Gradually fade to minimum 0.2 opacity
+			} else {
+				parallaxBg.style.opacity = '0.9';
+			}
+		});
+	});
+</script> 
+

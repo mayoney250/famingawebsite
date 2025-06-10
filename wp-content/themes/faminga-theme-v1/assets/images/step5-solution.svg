@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <style>
+    .st0{fill:#0D3A15;}
+    .st1{fill:#F26B3A;}
+    .st2{fill:#0A1A0F;}
+    .st3{fill:#FFFFFF;}
+    .st4{fill:#A0D995;}
+  </style>
+  <g>
+    <!-- Mobile Phone -->
+    <rect x="30" y="40" width="70" height="120" rx="10" class="st0"/>
+    <rect x="35" y="50" width="60" height="100" rx="5" class="st2"/>
+    
+    <!-- Solution Screen -->
+    <rect x="40" y="55" width="50" height="90" rx="3" class="st3" opacity="0.9"/>
+    
+    <!-- Solution Header -->
+    <rect x="40" y="55" width="50" height="15" rx="3" class="st1"/>
+    <text x="65" y="66" font-family="Arial" font-size="8" text-anchor="middle" fill="white">MAIZE LEAF BLIGHT</text>
+    
+    <!-- Solution Text -->
+    <rect x="45" y="75" width="40" height="4" rx="2" class="st0" opacity="0.2"/>
+    <rect x="45" y="82" width="40" height="4" rx="2" class="st0" opacity="0.2"/>
+    <rect x="45" y="89" width="40" height="4" rx="2" class="st0" opacity="0.2"/>
+    <rect x="45" y="96" width="40" height="4" rx="2" class="st0" opacity="0.2"/>
+    
+    <!-- Progress Chart -->
+    <rect x="45" y="105" width="40" height="30" rx="3" class="st0" opacity="0.1"/>
+    
+    <!-- Chart Line -->
+    <polyline points="50,125 60,120 70,115 80,105" stroke="#F26B3A" stroke-width="2" fill="none"/>
+    
+    <!-- Progress Data Points -->
+    <circle cx="50" cy="125" r="3" class="st1"/>
+    <circle cx="60" cy="120" r="3" class="st1"/>
+    <circle cx="70" cy="115" r="3" class="st1"/>
+    <circle cx="80" cy="105" r="3" class="st1"/>
+    
+    <!-- Data Analytics -->
+    <rect x="120" y="60" width="60" height="80" rx="5" class="st0"/>
+    
+    <!-- Chart 1 -->
+    <rect x="130" y="70" width="40" height="20" rx="2" class="st2"/>
+    <polyline points="135,85 145,75 155,80 165,70" stroke="#F26B3A" stroke-width="1" fill="none"/>
+    
+    <!-- Chart 2 -->
+    <rect x="130" y="100" width="40" height="30" rx="2" class="st2"/>
+    <rect x="135" y="120" width="5" height="5" class="st1"/>
+    <rect x="145" y="110" width="5" height="15" class="st1"/>
+    <rect x="155" y="105" width="5" height="20" class="st1"/>
+  </g>
+</svg> 

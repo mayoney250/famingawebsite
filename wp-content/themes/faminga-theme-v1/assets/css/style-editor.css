@@ -1,0 +1,60 @@
+/*
+ * Block Editor Styles
+ *
+ * This file contains styles for the block editor (Gutenberg).
+ */
+
+/* Main editor wrapper */
+.editor-styles-wrapper {
+    background-color: #0A1A0F;
+    color: #FFFFFF;
+}
+
+/* Set the default text color for all blocks */
+.editor-styles-wrapper .wp-block {
+    color: #FFFFFF;
+}
+
+/* Headings */
+.editor-styles-wrapper .wp-block-heading h1,
+.editor-styles-wrapper .wp-block-heading h2,
+.editor-styles-wrapper .wp-block-heading h3,
+.editor-styles-wrapper .wp-block-heading h4,
+.editor-styles-wrapper .wp-block-heading h5,
+.editor-styles-wrapper .wp-block-heading h6 {
+    color: #FFFFFF;
+}
+
+/* Paragraphs */
+.editor-styles-wrapper .wp-block-paragraph {
+    font-size: 1rem; /* Adjust as needed */
+    line-height: 1.6;
+}
+
+/* Links */
+.editor-styles-wrapper a {
+    color: #F26B3A;
+    text-decoration: none;
+}
+
+.editor-styles-wrapper a:hover {
+    text-decoration: underline;
+}
+
+/* Style for blockquote */
+.editor-styles-wrapper .wp-block-quote {
+    border-left: 4px solid #F26B3A;
+    padding-left: 1rem;
+    color: #CCCCCC;
+}
+
+.editor-styles-wrapper .wp-block-quote.is-style-large {
+    padding: 1.5rem;
+}
+
+.editor-styles-wrapper .wp-block-quote cite {
+    color: #9D6004;
+    font-style: italic;
+    display: block;
+    margin-top: 0.5rem;
+} 

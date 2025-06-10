@@ -1,0 +1,13 @@
+{
+  "name": "faminga-theme-v1",
+  "version": "1.0.0",
+  "description": "A dark, modern WordPress theme for smart farming dashboards.",
+  "scripts": {
+    "compile:sass": "sass assets/scss/style.scss style.css --style=compressed --watch"
+  },
+  "author": "AI Assistant",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "sass": "^1.77.4"
+  }
+} 

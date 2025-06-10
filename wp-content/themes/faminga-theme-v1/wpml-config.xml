@@ -1,0 +1,37 @@
+<wpml-config>
+    <!--
+        This file makes your theme compatible with the WPML plugin.
+        https://wpml.org/documentation/support/language-configuration-files/
+    -->
+
+    <admin-texts>
+        <!-- This makes the Primary Menu location translatable -->
+        <key name="theme_mods_faminga-theme-v1">
+            <key name="nav_menu_locations">
+                <key name="primary"/>
+            </key>
+        </key>
+    </admin-texts>
+    
+    <!--
+        Uncomment and add your Custom Post Type slugs below to make them translatable.
+        <custom-types>
+            <custom-type translate="1">solution</custom-type>
+        </custom-types>
+    -->
+    
+    <!--
+        Uncomment and add your Custom Taxonomy slugs below to make them translatable.
+        <taxonomies>
+            <taxonomy translate="1">solution_category</taxonomy>
+        </taxonomies>
+    -->
+
+    <!--
+        Uncomment and add your Custom Field meta keys below to make them translatable.
+        <custom-fields>
+            <custom-field action="translate">my_custom_field_key</custom-field>
+        </custom-fields>
+    -->
+
+</wpml-config> 

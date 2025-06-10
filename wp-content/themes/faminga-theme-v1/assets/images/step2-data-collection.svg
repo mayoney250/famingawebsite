@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <style>
+    .st0{fill:#0D3A15;}
+    .st1{fill:#F26B3A;}
+    .st2{fill:#0A1A0F;}
+    .st3{fill:#FFFFFF;}
+  </style>
+  <g>
+    <!-- Mobile Phone -->
+    <rect x="50" y="40" width="80" height="140" rx="10" class="st0"/>
+    <rect x="55" y="50" width="70" height="120" rx="5" class="st2"/>
+    
+    <!-- Screen with Data -->
+    <rect x="60" y="55" width="60" height="110" rx="3" class="st3" opacity="0.9"/>
+    
+    <!-- Data Elements -->
+    <rect x="65" y="65" width="50" height="8" rx="2" class="st0" opacity="0.2"/>
+    <rect x="65" y="80" width="50" height="8" rx="2" class="st0" opacity="0.2"/>
+    <rect x="65" y="95" width="50" height="8" rx="2" class="st0" opacity="0.2"/>
+    <rect x="65" y="110" width="50" height="8" rx="2" class="st0" opacity="0.2"/>
+    <rect x="65" y="125" width="50" height="8" rx="2" class="st0" opacity="0.2"/>
+    <rect x="65" y="140" width="50" height="8" rx="2" class="st0" opacity="0.2"/>
+    
+    <!-- IoT Sensor -->
+    <rect x="140" y="90" width="30" height="40" rx="3" class="st0"/>
+    <circle cx="155" cy="105" r="8" class="st1"/>
+    <rect x="145" y="120" width="20" height="5" rx="2" class="st3" opacity="0.7"/>
+    
+    <!-- Connection Lines -->
+    <line x1="130" y1="100" x2="140" y2="100" stroke="#F26B3A" stroke-width="2" stroke-dasharray="3,3"/>
+    <line x1="130" y1="110" x2="140" y2="110" stroke="#F26B3A" stroke-width="2" stroke-dasharray="3,3"/>
+    <line x1="130" y1="120" x2="140" y2="120" stroke="#F26B3A" stroke-width="2" stroke-dasharray="3,3"/>
+  </g>
+</svg> 

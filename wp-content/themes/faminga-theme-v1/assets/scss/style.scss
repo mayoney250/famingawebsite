@@ -1,0 +1,370 @@
+@use 'base/variables' as *;
+@use 'sass:color';
+
+// --- General Styles ---
+body {
+    background-color: $background-dark;
+    color: $text-white;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: $accent-orange;
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button-primary {
+    background-color: $accent-orange;
+    color: $text-white;
+}
+
+.button-secondary-outline {
+    border: 1px solid $accent-orange;
+    color: $accent-orange;
+}
+
+.learn-more-link {
+    color: $accent-orange;
+    font-weight: bold;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: $text-muted;
+    }
+}
+
+
+// --- Header ---
+.site-header {
+    padding: 20px 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-branding .site-title a {
+        color: $text-white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .main-navigation .nav-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0 15px;
+            a {
+                color: $text-white;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+
+        .button {
+            margin-left: 15px;
+        }
+
+        .button-signin {
+            color: $text-white;
+            font-weight: bold;
+        }
+    }
+
+    // Highlighting for the active navigation item
+    a.active-nav-item {
+        color: $primary-color;
+    }
+}
+
+
+// --- Hero Banner ---
+.hero-banner {
+    padding: 80px 0;
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .hero-content {
+        max-width: 50%;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+
+        .accent-text {
+            color: $accent-orange;
+        }
+    }
+
+    .hero-subtitle {
+        color: $text-muted;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons .button {
+        margin-right: 15px;
+    }
+    
+    .hero-features {
+        display: flex;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .hero-image {
+        max-width: 50%;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+// --- Feature Grid ---
+.feature-grid-section {
+    padding: 80px 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: transparent;
+    border: 1px solid $card-border;
+    padding: 30px;
+    border-radius: 10px;
+
+    .icon {
+        // Placeholder for icon
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: $accent-orange;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: $text-muted;
+        margin-bottom: 20px;
+    }
+}
+
+// --- Solutions Section ---
+.solutions-section {
+    padding: 80px 0;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.solution-item {
+    background-color: transparent;
+    border: 1px solid $card-border;
+    padding: 30px;
+    border-radius: 10px;
+    
+    .icon {
+        // Placeholder
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: $accent-orange;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .solution-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+        
+        li {
+            color: $text-muted;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            
+            &::before {
+                content: '✓';
+                color: $accent-orange;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}
+
+.solutions-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.solution-sub-item {
+    background-color: transparent;
+    border: 1px solid $card-border;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .icon {
+        // Placeholder
+        width: 30px;
+        height: 30px;
+        background: $accent-orange;
+        flex-shrink: 0;
+    }
+    
+    h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    p {
+        color: $text-muted;
+        margin: 0;
+    }
+}
+
+
+// --- All in One Platform ---
+.all-in-one-platform-section {
+    padding: 80px 0;
+    background-color: #000; // A bit darker for separation
+}
+
+
+// --- Platform Info ---
+.platform-info-section {
+    padding: 80px 0;
+    
+    .container {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+    }
+}
+
+.platform-info-left {
+    width: 40%;
+
+    .info-block {
+        border: 1px solid $card-border;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        
+        &.active, &:hover {
+            background-color: color.adjust($background-dark, $lightness: 5%);
+            border-color: $accent-orange;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            // Placeholder
+            width: 24px;
+            height: 24px;
+            background-color: $accent-orange;
+        }
+    }
+}
+
+.platform-info-right {
+    width: 60%;
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    p {
+        color: $text-muted;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            color: $text-muted;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-check {
+            // Placeholder
+            width: 16px;
+            height: 16px;
+            background-color: $accent-orange;
+        }
+    }
+} 

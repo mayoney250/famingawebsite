@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <style>
+    .st0{fill:#0D3A15;}
+    .st1{fill:#F26B3A;}
+    .st2{fill:#0A1A0F;}
+    .st3{fill:#FFFFFF;}
+  </style>
+  <g>
+    <!-- Mobile Phone -->
+    <rect x="70" y="30" width="90" height="150" rx="10" class="st0"/>
+    <rect x="75" y="40" width="80" height="130" rx="5" class="st2"/>
+    
+    <!-- App Screen -->
+    <rect x="80" y="45" width="70" height="120" rx="3" class="st3" opacity="0.9"/>
+    
+    <!-- Faminga Logo -->
+    <circle cx="115" cy="65" r="15" class="st1"/>
+    <path d="M115 55 L110 70 L120 70 Z" fill="#0D3A15"/>
+    
+    <!-- Form Elements -->
+    <rect x="90" y="85" width="50" height="10" rx="2" class="st0" opacity="0.2"/>
+    <rect x="90" y="100" width="50" height="10" rx="2" class="st0" opacity="0.2"/>
+    <rect x="90" y="115" width="50" height="10" rx="2" class="st0" opacity="0.2"/>
+    
+    <!-- Register Button -->
+    <rect x="95" y="135" width="40" height="15" rx="7.5" class="st1"/>
+    <text x="115" y="146" font-family="Arial" font-size="8" text-anchor="middle" fill="white">REGISTER</text>
+
+    <!-- Farmer -->
+    <circle cx="40" cy="100" r="20" class="st0"/>
+    <rect x="20" y="120" width="40" height="50" rx="5" class="st0"/>
+  </g>
+</svg> 

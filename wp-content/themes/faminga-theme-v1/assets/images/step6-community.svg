@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <style>
+    .st0{fill:#0D3A15;}
+    .st1{fill:#F26B3A;}
+    .st2{fill:#0A1A0F;}
+    .st3{fill:#FFFFFF;}
+  </style>
+  <g>
+    <!-- Farmer 1 -->
+    <circle cx="50" cy="80" r="20" class="st0"/>
+    <rect x="30" y="100" width="40" height="50" rx="5" class="st0"/>
+    
+    <!-- Farmer 2 -->
+    <circle cx="150" cy="80" r="20" class="st0"/>
+    <rect x="130" y="100" width="40" height="50" rx="5" class="st0"/>
+    
+    <!-- Expert/Agronomist Hat -->
+    <path d="M150 65 L140 65 L145 55 L155 55 L160 65 Z" class="st1"/>
+    
+    <!-- Chat Bubbles -->
+    <path d="M70 70 L90 60 L110 70 L90 80 Z" class="st3" opacity="0.9"/>
+    <text x="90" y="72" font-family="Arial" font-size="8" text-anchor="middle" fill="#0D3A15">?</text>
+    
+    <path d="M130 70 L110 60 L90 70 L110 80 Z" class="st3" opacity="0.9"/>
+    <text x="110" y="72" font-family="Arial" font-size="10" text-anchor="middle" fill="#0D3A15">...</text>
+    
+    <!-- Community Platform -->
+    <rect x="70" y="100" width="60" height="80" rx="5" class="st0"/>
+    <rect x="75" y="110" width="50" height="60" rx="3" class="st3" opacity="0.9"/>
+    
+    <!-- Forum Posts -->
+    <rect x="80" y="120" width="40" height="10" rx="2" class="st0" opacity="0.1"/>
+    <rect x="80" y="135" width="40" height="10" rx="2" class="st0" opacity="0.1"/>
+    <rect x="80" y="150" width="40" height="10" rx="2" class="st0" opacity="0.1"/>
+    
+    <!-- Chat Icon -->
+    <circle cx="100" cy="180" r="10" class="st1"/>
+    <path d="M95 178 L105 178 L105 182 L95 182 Z" fill="white"/>
+    <path d="M97 175 L97 185 L103 185 L103 175 Z" fill="white"/>
+  </g>
+</svg> 

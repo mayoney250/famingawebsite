@@ -1,0 +1,36 @@
+/*
+ * Customizer & Classic Editor Styles
+ *
+ * This file contains styles for the post editor to make it look more like the
+ * front-end of the site.
+ */
+
+body#tinymce.wp-editor {
+    background-color: #0A1A0F;
+    color: #FFFFFF;
+    font-family: sans-serif; /* A default font stack */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Headings */
+body#tinymce.wp-editor h1,
+body#tinymce.wp-editor h2,
+body#tinymce.wp-editor h3,
+body#tinymce.wp-editor h4,
+body#tinymce.wp-editor h5,
+body#tinymce.wp-editor h6 {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* Links */
+body#tinymce.wp-editor a {
+    color: #F26B3A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body#tinymce.wp-editor a:hover {
+    color: #FFFFFF;
+} 

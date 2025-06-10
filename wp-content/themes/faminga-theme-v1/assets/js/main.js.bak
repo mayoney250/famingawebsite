@@ -1,0 +1,129 @@
+// Main javascript file 
+document.addEventListener('DOMContentLoaded', function() {
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // Scroll to top on click
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    const chartDom = document.getElementById('farmChart');
+    if (chartDom) {
+        const myChart = echarts.init(chartDom);
+        const option = {
+            animation: false,
+            color: ['rgba(87, 181, 231, 1)', 'rgba(141, 211, 199, 1)', 'rgba(251, 191, 114, 1)', 'rgba(252, 141, 98, 1)'],
+            tooltip: {
+                trigger: 'axis',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                textStyle: {
+                    color: '#1f2937'
+                }
+            },
+            grid: {
+                top: 5,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.2)'
+                    }
+                },
+                axisLabel: {
+                    color: 'rgba(255, 255, 255, 0.6)',
+                    fontSize: 8
+                }
+            },
+            yAxis: {
+                type: 'value',
+                axisLine: {
+                    show: false
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                axisLabel: {
+                    color: 'rgba(255, 255, 255, 0.6)',
+                    fontSize: 8
+                }
+            },
+            series: [{
+                name: 'Soil Moisture',
+                type: 'line',
+                smooth: true,
+                symbol: 'none',
+                data: [28, 32, 36, 42, 38, 45],
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgba(87, 181, 231, 0.2)'
+                    }, {
+                        offset: 1,
+                        color: 'rgba(87, 181, 231, 0.05)'
+                    }])
+                }
+            }, {
+                name: 'Temperature',
+                type: 'line',
+                smooth: true,
+                symbol: 'none',
+                data: [22, 25, 29, 26, 24, 27],
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgba(141, 211, 199, 0.2)'
+                    }, {
+                        offset: 1,
+                        color: 'rgba(141, 211, 199, 0.05)'
+                    }])
+                }
+            }]
+        };
+        myChart.setOption(option);
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    }
+
+    // Language Switcher Logic
+    const switcher = document.getElementById('language-switcher');
+    if (switcher) {
+        const button = document.getElementById('language-switcher-button');
+        const options = document.getElementById('language-switcher-options');
+
+        button.addEventListener('click', function(event) {
+            event.stopPropagation();
+            options.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', function() {
+            if (!options.classList.contains('hidden')) {
+                options.classList.add('hidden');
+            }
+        });
+    }
+});

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <style>
+    .st0{fill:#0D3A15;}
+    .st1{fill:#F26B3A;}
+    .st2{fill:#0A1A0F;}
+    .st3{fill:#FFFFFF;}
+    .st4{fill:#A0D995;}
+  </style>
+  <g>
+    <!-- IoT Device -->
+    <rect x="30" y="60" width="40" height="80" rx="5" class="st0"/>
+    <circle cx="50" cy="80" r="10" class="st1"/>
+    <rect x="40" y="100" width="20" height="5" rx="2" class="st3" opacity="0.7"/>
+    <rect x="40" y="110" width="20" height="5" rx="2" class="st3" opacity="0.7"/>
+    <rect x="40" y="120" width="20" height="5" rx="2" class="st3" opacity="0.7"/>
+    
+    <!-- Plant -->
+    <rect x="45" y="140" width="10" height="20" class="st0"/>
+    <path d="M50 140 L40 120 L60 120 Z" class="st4"/>
+    <path d="M50 120 L40 100 L60 100 Z" class="st4"/>
+    
+    <!-- Sensor Signals -->
+    <circle cx="50" cy="80" r="15" stroke="#F26B3A" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
+    <circle cx="50" cy="80" r="25" stroke="#F26B3A" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+    
+    <!-- Mobile Phone -->
+    <rect x="120" y="40" width="70" height="120" rx="10" class="st0"/>
+    <rect x="125" y="50" width="60" height="100" rx="5" class="st2"/>
+    
+    <!-- Alert Screen -->
+    <rect x="130" y="55" width="50" height="90" rx="3" class="st3" opacity="0.9"/>
+    
+    <!-- Alert -->
+    <circle cx="155" cy="85" r="15" class="st1" opacity="0.8"/>
+    <text x="155" y="89" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="white">!</text>
+    
+    <!-- Alert Text -->
+    <rect x="135" y="110" width="40" height="5" rx="2" class="st0" opacity="0.2"/>
+    <rect x="135" y="120" width="40" height="5" rx="2" class="st0" opacity="0.2"/>
+    <rect x="135" y="130" width="40" height="5" rx="2" class="st0" opacity="0.2"/>
+    
+    <!-- Signal Lines -->
+    <path d="M70 80 C90 60, 100 70, 120 80" stroke="#F26B3A" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
+  </g>
+</svg> 

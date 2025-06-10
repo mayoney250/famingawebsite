@@ -1,0 +1,79 @@
+<?php
+/**
+ * Plugin Name: Faminga Language Switcher Fix V2
+ * Description: Simple fix for the language switcher dropdown
+ * Version: 2.0
+ * Author: Faminga Team
+ */
+
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+/**
+ * Add a direct solution to fix the language switcher.
+ */
+function faminga_language_switcher_fix_v2() {
+    ?>
+    <script>
+    // Run on window load to ensure all other scripts have executed
+    window.addEventListener('load', function() {
+        // Wait a short time to ensure DOM is fully ready
+        setTimeout(function() {
+            console.log('Running simplified language switcher fix');
+            
+            // Elements
+            var button = document.getElementById('language-switcher-button');
+            var dropdown = document.getElementById('language-switcher-options');
+            
+            // Exit if elements don't exist
+            if (!button || !dropdown) {
+                console.error('Language switcher elements not found');
+                return;
+            }
+            
+            // Create a direct click function that will bypass any event handlers
+            window.toggleLanguageDropdown = function(e) {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                
+                console.log('Direct toggle function called');
+                
+                // Toggle dropdown visibility
+                if (dropdown.classList.contains('hidden')) {
+                    dropdown.classList.remove('hidden');
+                    dropdown.style.display = 'block';
+                    console.log('Showing dropdown');
+                } else {
+                    dropdown.classList.add('hidden');
+                    dropdown.style.display = 'none';
+                    console.log('Hiding dropdown');
+                }
+                
+                return false;
+            };
+            
+            // Replace the button's onclick attribute
+            button.setAttribute('onclick', 'return toggleLanguageDropdown(event);');
+            
+            // Also set direct HTML-level onclick for extra assurance
+            button.outerHTML = button.outerHTML.replace(/onclick="[^"]*"/, 'onclick="return toggleLanguageDropdown(event);"');
+            
+            // Reacquire the button since we replaced its HTML
+            button = document.getElementById('language-switcher-button');
+            
+            console.log('Language switcher fix applied');
+        }, 500);
+    });
+    </script>
+    <style>
+    #language-switcher-options:not(.hidden) {
+        display: block !important;
+    }
+    </style>
+    <?php
+}
+add_action('wp_footer', 'faminga_language_switcher_fix_v2', 9999);

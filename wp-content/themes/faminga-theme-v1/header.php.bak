@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php wp_head(); ?>
+	
+	<script>
+	// Fixed navigation bar on scroll
+	document.addEventListener('DOMContentLoaded', function() {
+		const nav = document.querySelector('nav');
+		if (!nav) return;
+		
+		// Add an ID to the nav element for easier targeting
+		nav.id = 'main-nav';
+		
+		// Create a spacer element to prevent content jump when nav becomes fixed
+		const navSpacer = document.createElement('div');
+		navSpacer.id = 'nav-spacer';
+		navSpacer.classList.add('hidden');
+		nav.after(navSpacer);
+		
+		// Store the original nav height
+		const navHeight = nav.offsetHeight;
+		navSpacer.style.height = `${navHeight}px`;
+		
+		// Add transition classes to nav
+		nav.classList.add('transition-all', 'duration-300', 'z-50');
+		
+		// Function to handle scroll events
+		function handleScroll() {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			
+			// If we've scrolled past 100px, make the navbar fixed
+			if (scrollTop > 100) {
+				nav.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'shadow-lg');
+				nav.classList.add('py-2'); // Smaller padding when fixed
+				nav.classList.add('bg-dark-green', 'bg-opacity-95'); // Slightly transparent background
+				navSpacer.classList.remove('hidden'); // Show the spacer
+			} else {
+				nav.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'shadow-lg');
+				nav.classList.remove('py-2');
+				nav.classList.remove('bg-opacity-95');
+				navSpacer.classList.add('hidden'); // Hide the spacer
+			}
+		}
+		
+		// Initial call in case the page is loaded scrolled down
+		handleScroll();
+		
+		// Add scroll event listener
+		window.addEventListener('scroll', handleScroll);
+	});
+	</script>
+</head>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'faminga-theme-v1' ); ?></a>
+
+	<!-- Navigation -->
+    <nav id="main-nav" class="w-full py-4 px-6 flex items-center justify-between bg-dark-green transition-all duration-300 z-50">
+        <!-- Left: Logo -->
+        <div class="flex-1">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/faminga-logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="h-10" />
+            </a>
+        </div>
+        
+        <!-- Center: Menu -->
+        <div class="hidden md:flex space-x-6">
+            <?php
+            // Translations for menu items
+            $menu_translations = [
+                'en_US' => [
+                    'features' => 'Features',
+                    'solutions' => 'Solutions',
+                    'technology' => 'Technology',
+                    'pricing' => 'Pricing',
+                    'career' => 'Career',
+                    'help' => 'Help'
+                ],
+                'rw_RW' => [
+                    'features' => 'Ibiranga',
+                    'solutions' => 'Ibisubizo',
+                    'technology' => 'Ikoranabuhanga',
+                    'pricing' => 'Ibiciro',
+                    'career' => 'Akazi',
+                    'help' => 'Ubufasha'
+                ]
+            ];
+            
+            $current_locale = get_locale();
+            if (!isset($menu_translations[$current_locale])) {
+                $current_locale = 'en_US';
+            }
+            $mt = $menu_translations[$current_locale];
+            ?>
+            <a href="<?php echo esc_url(home_url('/')); ?>#features" class="px-4 py-2 text-white hover:text-primary transition-colors duration-200"><?php echo esc_html($mt['features']); ?></a>
+            <a href="<?php echo esc_url(home_url('/')); ?>#solutions" class="px-4 py-2 text-white hover:text-primary transition-colors duration-200"><?php echo esc_html($mt['solutions']); ?></a>
+            <a href="<?php echo esc_url(home_url('/')); ?>#technology" class="px-4 py-2 text-white hover:text-primary transition-colors duration-200"><?php echo esc_html($mt['technology']); ?></a>
+            <a href="<?php echo esc_url(home_url('/')); ?>#pricing" class="px-4 py-2 text-white hover:text-primary transition-colors duration-200"><?php echo esc_html($mt['pricing']); ?></a>
+            <a href="<?php echo esc_url(home_url('/career')); ?>" class="px-4 py-2 text-white hover:text-primary transition-colors duration-200"><?php echo esc_html($mt['career']); ?></a>
+            <a href="<?php echo esc_url(home_url('/help')); ?>" class="px-4 py-2 text-white hover:text-primary transition-colors duration-200"><?php echo esc_html($mt['help']); ?></a>
+        </div>
+
+        <!-- Right: Buttons -->
+        <div class="flex-1 flex justify-end items-center space-x-4">
+            <?php
+            $current_locale = get_locale();
+            $languages = [
+                'en_US' => ['short' => 'EN', 'flag' => 'us', 'name' => 'English'],
+                'rw_RW' => ['short' => 'RW', 'flag' => 'rw', 'name' => 'Kinyarwanda'],
+                'fr_FR' => ['short' => 'FR', 'flag' => 'fr', 'name' => 'Français'],
+                'sw_KE' => ['short' => 'SW', 'flag' => 'ke', 'name' => 'Kiswahili'],
+                'lg_UG' => ['short' => 'LU', 'flag' => 'ug', 'name' => 'Luganda'],
+            ];
+            $current_lang_data = $languages[$current_locale] ?? $languages['en_US'];
+            
+            // Translations for buttons
+            $button_translations = [
+                'en_US' => [
+                    'sign_in' => 'Sign In',
+                    'get_started' => 'Get Started'
+                ],
+                'rw_RW' => [
+                    'sign_in' => 'Injira',
+                    'get_started' => 'Tangira Ubu'
+                ]
+            ];
+            
+            if (!isset($button_translations[$current_locale])) {
+                $current_locale = 'en_US';
+            }
+            $bt = $button_translations[$current_locale];
+            ?>
+            <div class="relative" id="language-switcher">
+                <button id="language-switcher-button" class="px-3 py-2 border border-white text-white hover:bg-white hover:text-primary transition !rounded-button flex items-center space-x-2">
+                    <img src="https://flagcdn.com/w20/<?php echo esc_attr($current_lang_data['flag']); ?>.png" alt="<?php echo esc_attr($current_lang_data['short']); ?> flag" class="h-4 w-auto">
+                    <span class="hidden sm:inline"><?php echo esc_html($current_lang_data['short']); ?></span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div id="language-switcher-options" class="hidden absolute right-0 mt-2 py-2 w-48 bg-[#0a2c0a] rounded-lg shadow-xl z-20 border border-[#526700] border-opacity-30">
+                    <?php foreach ( $languages as $locale_code => $lang_data ) : ?>
+                        <?php if ( $current_locale !== $locale_code ) : ?>
+                            <a href="<?php echo esc_url( add_query_arg( 'lang', $locale_code, $_SERVER['REQUEST_URI'] ) ); ?>" class="flex items-center space-x-3 px-4 py-2 text-sm text-white hover:bg-primary">
+                                <img src="https://flagcdn.com/w20/<?php echo esc_attr($lang_data['flag']); ?>.png" alt="<?php echo esc_attr($lang_data['short']); ?> flag" class="h-4 w-auto">
+                                <span><?php echo esc_html( $lang_data['name'] ); ?></span>
+                            </a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <a href="<?php echo esc_url(wp_login_url()); ?>" class="px-4 py-2 border border-white text-white hover:bg-white hover:text-primary transition !rounded-button whitespace-nowrap"><?php echo esc_html($bt['sign_in']); ?></a>
+            <a href="<?php echo esc_url(home_url('/demo-request')); ?>" class="px-4 py-2 bg-primary text-white hover:bg-opacity-90 transition !rounded-button whitespace-nowrap"><?php echo esc_html($bt['get_started']); ?></a>
+        </div>
+    </nav>
+    
+    <!-- Spacer for fixed navigation -->
+    <div id="nav-spacer" class="hidden h-[72px]"></div>
+
+	<div id="content" class="site-content"> 
+
+<script>
+// Fixed navigation bar on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.getElementById('main-nav');
+    const navSpacer = document.getElementById('nav-spacer');
+    let lastScrollTop = 0;
+    
+    // Function to handle scroll events
+    function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // If we've scrolled past 100px, make the navbar fixed
+        if (scrollTop > 100) {
+            nav.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'shadow-lg');
+            nav.classList.add('py-2'); // Smaller padding when fixed
+            nav.classList.add('bg-dark-green', 'bg-opacity-95'); // Slightly transparent background
+            navSpacer.classList.remove('hidden'); // Show the spacer
+        } else {
+            nav.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'shadow-lg');
+            nav.classList.remove('py-2');
+            nav.classList.remove('bg-opacity-95');
+            navSpacer.classList.add('hidden'); // Hide the spacer
+        }
+        
+        lastScrollTop = scrollTop; // Update the last scroll position
+    }
+    
+    // Initial call in case the page is loaded scrolled down
+    handleScroll();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Language switcher toggle
+    const languageSwitcherButton = document.getElementById('language-switcher-button');
+    const languageSwitcherOptions = document.getElementById('language-switcher-options');
+    
+    if (languageSwitcherButton && languageSwitcherOptions) {
+        languageSwitcherButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            languageSwitcherOptions.classList.toggle('hidden');
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function() {
+            languageSwitcherOptions.classList.add('hidden');
+        });
+        
+        // Prevent closing when clicking on the options
+        languageSwitcherOptions.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
+</script> 
