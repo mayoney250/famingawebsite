@@ -1,0 +1,21 @@
+# Ignore WordPress core folders and files
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# Ignore other themes and plugins
+/wp-content/plugins/
+/wp-content/themes/twentytwentyfour/
+
+# Ignore user-generated content and sensitive files
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/updraft/
+/wp-config.php
+
+# Ignore theme build artifacts
+/wp-content/themes/faminga-theme-v1/node_modules/
+/wp-content/themes/faminga-theme-v1/style.css.map 
